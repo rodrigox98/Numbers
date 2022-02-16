@@ -1,0 +1,54 @@
+*, *::before, *::after 
+header{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    font-size: larger;
+}
+header .container{
+    margin-left: 3%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+header nav a{
+    text-decoration: none;
+    color: white;
+    margin-right: 50px;
+    font-size: 25px;
+}   
+body{
+    background: linear-gradient(to right, #E2DBBE, #c9d6aa);
+    padding: 0;
+    margin: 0;
+}
+main .calculator-grid{
+    display: grid; /*specifies the display behavior(the type of rendering box) of an element. In this case a grid container */
+    justify-content: center; /*property aligns the flexible container's items when the items do not use all available space on the main-axis(horizontally). In this case,  items are positioned at center of the container*/
+
+    /* align-items: center; property specifies the default alignment for items inside the flexible container. in this case, positioned at the center of the container. "foi mudado para align-content" */
+
+    align-content: center;
+    min-height: 100vh; /*specifies the minimum height of an element  */
+    grid-template-columns: repeat(4, 100px);/*specifies the number(and the widths) of columns in a grid layout. In this case repeat a column 4 times, with 100px */
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);/*specifies the number(and the heights) of the rows in a grid layout. In this case, repeat a row 4 timtes, with 100px */
+}
+main .calculator-grid > button{
+    cursor: pointer; /*Change the cursor */ 
+    font-size: 2rem;
+    border: 1px solid rgb(255, 255, 255);
+    outline: none;
+    background-color: rgba(255, 255, 255, .75);
+}
+main .calculator-grid > button:hover{
+    background-color: rgba(255, 255, 255, 9); /*color, color,color, opacity */
+}
+main .span-two{
+    grid-column: span 2;
+}
+main .output{
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
