@@ -1,4 +1,4 @@
-*, *::before, *::after 
+/* *, *::before, *::after */
 header{
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: larger;
@@ -27,7 +27,7 @@ main .calculator-grid{
 
     /* align-items: center; property specifies the default alignment for items inside the flexible container. in this case, positioned at the center of the container. "foi mudado para align-content" */
 
-    align-content: center;
+    align-content: center; /*The flex item's margin boxes are centered within the line on the cross-axis.  */
     min-height: 100vh; /*specifies the minimum height of an element  */
     grid-template-columns: repeat(4, 100px);/*specifies the number(and the widths) of columns in a grid layout. In this case repeat a column 4 times, with 100px */
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);/*specifies the number(and the heights) of the rows in a grid layout. In this case, repeat a row 4 timtes, with 100px */
@@ -43,12 +43,24 @@ main .calculator-grid > button:hover{
     background-color: rgba(255, 255, 255, 9); /*color, color,color, opacity */
 }
 main .span-two{
-    grid-column: span 2;
+     grid-column: span 2; /*Expande for 2 column the element  */
 }
 main .output{
-    grid-column: 1 / -1;
+    grid-column: 1 / -1; /*specifies a grid item's size and location  */
     background-color: rgba(0, 0, 0, .75);
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
+    align-items: flex-end; /*Align the items in the end of box */
+    justify-content: space-between /*Create a space between the elements */;
+    flex-direction: column;/*set the direction of the elements in the form of a column*/
+    padding: 10px;
+    word-wrap: break-word;/*property allows long words to be able to be broken and wrap onto the next line. "break-word" allows unbreakable words to be broken */
+    word-break: break-all; /*specifies how words should break when reaching the end of a line."break-all" to prevent overflow, word may be broken at any character  */
+}
+.output .previous-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.5rem;
+}
+.output .current-operand{
+    color: rgba(255, 255, 255, .75);
+    font-size: 2.5rem;
 }
